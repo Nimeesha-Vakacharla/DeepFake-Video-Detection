@@ -43,7 +43,8 @@ The custom XceptionNet, enhanced with Swiss Residual Blocks, employs depthwise s
 - **Exit Flow**: Three separable convolutions expand channels to 2048, followed by global average pooling and a fully connected layer compressing to 1024 features per frame.
 - **Swiss Residual Block**: Features three parallel paths—two 3x3 convolutions with residual connection, a 1x1 convolution for direct transformation, and average pooling with 1x1 convolution for broader context—blending ResNet’s residual learning with Xception’s efficiency.
 
-> [Insert Image: Architecture Diagram]
+![Architecture](images/DFVD_Architecture.png)
+*Figure: A diagram illustrating the proposed hybrid architecture, including the Custom XceptionNet with Swiss Residual Blocks, Bidirectional LSTM, Attention Mechanism, and Classification layers.*
 
 ### Temporal Analysis and Classification
 - **Bidirectional LSTM**: Processes 1024-dimensional frame features with a 2-layer BiLSTM (512 units per direction), analyzing temporal dependencies bidirectionally and outputting 1024-dimensional vectors per frame.
@@ -54,6 +55,8 @@ The custom XceptionNet, enhanced with Swiss Residual Blocks, employs depthwise s
 
 ### Input Processing
 Input frames (batch_size × 10 × 3 × H × W) are processed by XceptionNet to yield 1024-dimensional embeddings capturing spatial artifacts like unnatural textures.
+
+![Original](images/frames.png)
 
 ### Transfer Learning
 Pre-trained weights from the timm library are loaded, with the first 11 blocks frozen to retain low-level ImageNet features, preventing overfitting on the imbalanced dataset. Subsequent layers are fine-tuned for deepfake-specific patterns.
@@ -75,12 +78,13 @@ The forward pass extracts spatial features with XceptionNet, feeds them into a 2
 - **Validation Accuracy**: 97.01%
 - **ROC-AUC Score**: 0.988
 
-> [Insert Graph: Performance Metrics]
+![graph1](images/graph1.png)
+
 
 ### Comparative Analysis
 The proposed model (97.01%) outperforms the Standard Xception Model (94.5%), ResNet-Swish-BiLSTM (96%), and rivals the Pre-trained Xception + InceptionV3 + ResNet50 ensemble (98%), offering competitive accuracy with simpler architecture.
 
-> [Insert Graph: Comparative Accuracy]
+![graph2](images/graph2.png)
 
 ## Inference Process
 The inference pipeline involves six steps:
@@ -92,7 +96,9 @@ The inference pipeline involves six steps:
 5. **Classification**: The saved model outputs a binary result (0/1) with confidence.
 6. **Output Visualization**: Displays 10 processed frames, prediction, and confidence.
 
-> [Insert Image: Original and Post-Processed Frames]
+![Original](images/original.png)
+![Original](images/extracted.png)
+*Figure: Original and post processed frames of sample inference video" from the report and "Original and Post Processed frames of Sample Inference Video*
 
 ## Technical Novelty
 
