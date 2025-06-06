@@ -135,3 +135,19 @@ This project presents a novel hybrid deepfake detection system, achieving 97.01%
 8. Hao, K., "Deepfake porn is ruining women's lives. Now the law may finally ban it," MIT Technology Review, 2023.  
 9. CBC News, "N.L. family loses $10K in voice cloning scam," CBC, 2023.  
 10. Financial Times, "Hong Kong company loses $25m in deepfake video call scam," FT, 2024.  
+
+---
+
+## Resources and Data Access
+
+All preprocessed data, including the **cropped facial images**, **sampled video frames**, and **model artifacts**, are organized and available in the shared Google Drive folder:
+
+🔗 **[Access the resources here](https://drive.google.com/drive/folders/1S-fabYfWzQfpQdi9SBR45DUqBA7FAdgp?usp=sharing)**
+
+This folder contains:
+- Cropped face images used for training and inference.
+- Sampled frames extracted from the videos.
+- Output visualizations from inference runs.
+- Additional supporting files required for replication or further research.
+
+These resources ensure reproducibility and enable further experimentation by the research community.
