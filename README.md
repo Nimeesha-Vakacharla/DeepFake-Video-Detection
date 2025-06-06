@@ -43,7 +43,7 @@ The custom XceptionNet, enhanced with Swiss Residual Blocks, employs depthwise s
 - **Exit Flow**: Three separable convolutions expand channels to 2048, followed by global average pooling and a fully connected layer compressing to 1024 features per frame.
 - **Swiss Residual Block**: Features three parallel paths—two 3x3 convolutions with residual connection, a 1x1 convolution for direct transformation, and average pooling with 1x1 convolution for broader context—blending ResNet’s residual learning with Xception’s efficiency.
 
-![Architecture](images/DFVD_Architecture.png)
+![Architecture](images/DFVD_Architecture.jpeg)
 *Figure: A diagram illustrating the proposed hybrid architecture, including the Custom XceptionNet with Swiss Residual Blocks, Bidirectional LSTM, Attention Mechanism, and Classification layers.*
 
 ### Temporal Analysis and Classification
